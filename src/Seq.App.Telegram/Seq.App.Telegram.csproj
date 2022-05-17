@@ -8,6 +8,7 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <IncludeBuildOutput>true</IncludeBuildOutput>
+    <PackageIcon>icon.png</PackageIcon>
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
   </PropertyGroup>
 
@@ -28,5 +29,9 @@
       <BuildOutputInPackage Include="$(OutputPath)MihaZupan.HttpToSocks5Proxy.dll" />
     </ItemGroup>
   </Target>
+
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" PackagePath="/" Visible="false" />
+  </ItemGroup>
 
 </Project>
