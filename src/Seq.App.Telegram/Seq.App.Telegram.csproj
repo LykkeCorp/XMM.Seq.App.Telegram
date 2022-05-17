@@ -2,14 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>Seq.App.Telegram</PackageId>
+    <PackageId>XMM.Seq.App.Telegram</PackageId>
     <Description>An app for Seq (http://getseq.net) that forwards messages to Telegram.</Description>
-    <Authors>STDray</Authors>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageProjectUrl>https://github.com/stdray/Seq.App.Telegram</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageTags>seq-app seq serilog events telegram</PackageTags>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <IncludeBuildOutput>true</IncludeBuildOutput>
   </PropertyGroup>
