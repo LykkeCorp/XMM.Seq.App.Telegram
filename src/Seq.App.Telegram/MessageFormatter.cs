@@ -39,15 +39,17 @@ namespace Seq.App.Telegram
         string SubstitutePlaceholders(string messageTemplateToUse, Event<LogEventData> evt)
         {
             var data = evt.Data;
-            var eventType = evt.EventType;
-            var level = data.Level;
 
             var placeholders = data.Properties?.ToDictionary(x => x.Key, x => x.Value, StringComparer.OrdinalIgnoreCase)
                 ?? new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
 
-            AddValueIfKeyDoesntExist(placeholders, "Level", level);
-            AddValueIfKeyDoesntExist(placeholders, "EventType", eventType);
+            AddValueIfKeyDoesntExist(placeholders, "Id", data.Id);
+            AddValueIfKeyDoesntExist(placeholders, "Timestamp", evt.TimestampUtc);
+            AddValueIfKeyDoesntExist(placeholders, "LocalTimestamp", data.LocalTimestamp);
+            AddValueIfKeyDoesntExist(placeholders, "Level", data.Level);
+            AddValueIfKeyDoesntExist(placeholders, "EventType", evt.EventType);
             AddValueIfKeyDoesntExist(placeholders, "RenderedMessage", data.RenderedMessage);
+            AddValueIfKeyDoesntExist(placeholders, "Exception", data.Exception);
 
             return PlaceholdersRegex.Replace(messageTemplateToUse, m =>
             {
