@@ -5,7 +5,6 @@
     <PackageId>XMM.Seq.App.Telegram</PackageId>
     <Description>An app for Seq (http://getseq.net) that forwards messages to Telegram.</Description>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageIcon>icon.png</PackageIcon>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <IncludeBuildOutput>true</IncludeBuildOutput>
