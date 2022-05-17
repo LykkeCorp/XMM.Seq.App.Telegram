@@ -18,6 +18,6 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release ./src /p:AssemblyVersion=${GITHUB_REF#refs/tags/v-}
     - name: Create the package
-      run: dotnet pack --configuration Release src/Seq.App.Telegram /p:Version=${GITHUB_REF#refs/tags/client-}
+      run: dotnet pack --configuration Release src/Seq.App.Telegram /p:Version=${GITHUB_REF#refs/tags/v-}
     - name: Publish the package to GPR
       run: dotnet nuget push src/Seq.App.Telegram/bin/Release/*.nupkg -s https://f.feedz.io/lykkecorp/xmm/nuget/index.json -k ${{ secrets.FEEDZ_TOKEN }}
