@@ -26,12 +26,8 @@
   <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
     <ItemGroup>
       <BuildOutputInPackage Include="$(OutputPath)Telegram.Bot.dll" />
+      <BuildOutputInPackage Include="$(OutputPath)MihaZupan.HttpToSocks5Proxy.dll" />
     </ItemGroup>
   </Target>
-
-  <ItemGroup>
-    <None Include="icon.png" Pack="true" PackagePath="/" Visible="false" />
-    <None Include="./obj/publish/**/*.*" Exclude="./obj/publish/Seq.App.Telegram.dll;./obj/publish/Seq.Apps.dll;./obj/publish/Serilog.dll" Pack="true" PackagePath="lib/$(TargetFramework)" Visible="false" />
-  </ItemGroup>
 
 </Project>
