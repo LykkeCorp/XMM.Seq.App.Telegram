@@ -44,7 +44,7 @@ namespace Seq.App.Telegram
                 ?? new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
 
             AddValueIfKeyDoesntExist(placeholders, "@Id", data.Id);
-            AddValueIfKeyDoesntExist(placeholders, "@Timestamp", evt.TimestampUtc.ToString("O"));
+            AddValueIfKeyDoesntExist(placeholders, "@Timestamp", evt.TimestampUtc.ToString("yyyy-MM-dd HH:mm:ss.fff"));
             AddValueIfKeyDoesntExist(placeholders, "@Template", data.MessageTemplate);
             AddValueIfKeyDoesntExist(placeholders, "Level", data.Level);
             AddValueIfKeyDoesntExist(placeholders, "EventType", evt.EventType);
