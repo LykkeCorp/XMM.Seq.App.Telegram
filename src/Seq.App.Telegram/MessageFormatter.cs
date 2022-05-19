@@ -44,9 +44,10 @@ namespace Seq.App.Telegram
                 ?? new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
 
             AddValueIfKeyDoesntExist(placeholders, "@Id", data.Id);
-            AddValueIfKeyDoesntExist(placeholders, "@Timestamp", evt.TimestampUtc.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+            AddValueIfKeyDoesntExist(placeholders, "@Timestamp", evt.TimestampUtc.ToString("HH:mm:ss.fff"));
             AddValueIfKeyDoesntExist(placeholders, "@Template", data.MessageTemplate);
             AddValueIfKeyDoesntExist(placeholders, "Level", data.Level);
+            AddValueIfKeyDoesntExist(placeholders, "LevelSign", data.Level == "Error" ? "🔥" : "");
             AddValueIfKeyDoesntExist(placeholders, "EventType", evt.EventType);
             AddValueIfKeyDoesntExist(placeholders, "@Message", data.RenderedMessage);
             AddValueIfKeyDoesntExist(placeholders, "Exception", data.Exception);
