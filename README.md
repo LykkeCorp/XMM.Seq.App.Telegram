@@ -6,15 +6,17 @@ An app for Seq (http://getseq.net) that forwards messages to Telegram group chat
 [![Build status](https://ci.appveyor.com/api/projects/status/slbuim8p6s9adl2g/branch/master?svg=true)](https://ci.appveyor.com/project/stdray/seq-app-telegram/branch/master)
 
 ### Supported template built-in properties:
-* https://github.com/LykkeCorp/XMM.Seq.App.Telegram/blob/main/src/Seq.App.Telegram/MessageFormatter.cs#L46
+* [MessageFormatter.cs](https://github.com/LykkeCorp/XMM.Seq.App.Telegram/blob/main/src/Seq.App.Telegram/MessageFormatter.cs#L46)
 
 ### All built-in properties:
-* https://docs.datalust.co/docs/built-in-properties-and-functions
+* [Official documentation](https://docs.datalust.co/docs/built-in-properties-and-functions)
 
-Example template:
-*[product-name]* [@LevelSign]
-[@Message]
-`[@Timestamp]`
+### Example template:  
+```
+*[product-name]* [@LevelSign]  
+[@Message]  
+`[@Timestamp]`  
+```
 
 ### In order to use Seq.App.Telegram you will need:
 * **Seq 2021.4+** Older versions is not supported by current package.
