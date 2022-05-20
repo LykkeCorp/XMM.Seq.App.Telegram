@@ -46,11 +46,12 @@ namespace Seq.App.Telegram
             AddValueIfKeyDoesntExist(placeholders, "@Id", data.Id);
             AddValueIfKeyDoesntExist(placeholders, "@Timestamp", evt.TimestampUtc.ToString("HH:mm:ss.fff"));
             AddValueIfKeyDoesntExist(placeholders, "@Template", data.MessageTemplate);
-            AddValueIfKeyDoesntExist(placeholders, "Level", data.Level);
-            AddValueIfKeyDoesntExist(placeholders, "LevelSign", data.Level == LogEventLevel.Error ? "🔥" : "");
-            AddValueIfKeyDoesntExist(placeholders, "EventType", evt.EventType);
+            AddValueIfKeyDoesntExist(placeholders, "@Level", data.Level);
+            AddValueIfKeyDoesntExist(placeholders, "@LevelSign", data.Level == LogEventLevel.Error 
+                                                              || data.Level == LogEventLevel.Fatal ? "🔥" : "");
+            AddValueIfKeyDoesntExist(placeholders, "@EventType", evt.EventType);
             AddValueIfKeyDoesntExist(placeholders, "@Message", data.RenderedMessage);
-            AddValueIfKeyDoesntExist(placeholders, "Exception", data.Exception);
+            AddValueIfKeyDoesntExist(placeholders, "@Exception", data.Exception);
 
             return PlaceholdersRegex.Replace(messageTemplateToUse, m =>
             {
