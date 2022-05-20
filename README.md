@@ -1,3 +1,10 @@
+Supported template built-in properties:
+https://github.com/LykkeCorp/XMM.Seq.App.Telegram/blob/main/src/Seq.App.Telegram/MessageFormatter.cs#L46
+
+All built-in properties:
+https://docs.datalust.co/docs/built-in-properties-and-functions
+
+
 # Seq.App.Telegram
 An app for Seq (http://getseq.net) that forwards messages to Telegram group chat. Socks5 proxy supported.
 
