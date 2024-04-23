@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Telegram.Bot;
+using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types.Enums;
 
 namespace Seq.App.Telegram
@@ -80,7 +81,18 @@ namespace Seq.App.Telegram
                 return;
             var formatter = new MessageFormatter(Log, GetBaseUri(), MessageTemplate);
             var message = formatter.GenerateMessageText(evt);
-            await _telegram.Value.SendTextMessageAsync(ChatId, message, ParseMode.Markdown);
+            try
+            {
+                await _telegram.Value.SendTextMessageAsync(ChatId, message, ParseMode.Markdown);
+            }
+            catch (ApiRequestException ex)
+            {
+                if (ex.Message.Contains("message is too long"))
+                {
+                    evt.Data.Properties.TryGetValue("SourceContext", out var context);
+                    Log.Error(ex, "Message is too long {MessageSize}: {MessageTemplate} - {SourceContext}", message.Length, evt.Data.MessageTemplate, context);
+                }
+            }
         }
     }
 }
