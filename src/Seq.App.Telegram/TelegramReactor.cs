@@ -92,6 +92,8 @@ namespace Seq.App.Telegram
                     evt.Data.Properties.TryGetValue("SourceContext", out var context);
                     Log.Error(ex, "Message is too long {MessageSize}: {MessageTemplate} - {SourceContext}", message.Length, evt.Data.MessageTemplate, context);
                 }
+
+                throw;
             }
         }
     }
