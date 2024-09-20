@@ -1,0 +1,9 @@
+# All files are owned by xmm-developers by default, except the ".github" folder.
+* @LykkeCorp/xmm-developers
+
+# The ".github" folder and its contents are owned by xmm-admins.
+# This pattern matches all files and subdirectories within ".github/" recursively.
+# The leading slash makes the path relative to the repository root.
+# The double asterisk "**" ensures recursive matching.
+# This specific rule overrides the general rule above for ".github/".
+/.github/** @LykkeCorp/xmm-admins
